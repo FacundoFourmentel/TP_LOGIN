@@ -24,12 +24,12 @@ class _P1State extends State<P1> {
 
       if (usuarioIngresado.isEmpty || claveIngresada.isEmpty) {
 
-        textoEstado = "Debe completar todos los campos";
+        textoEstado = "complete todos los campos obligatorios";
 
-      } else if (usuarioIngresado == "admin" &&
-          claveIngresada == "1234") {
+      } else if (usuarioIngresado == "cuenta" &&
+          claveIngresada == "LaMejorContraseña") {
 
-        textoEstado = "Acceso correcto";
+        textoEstado = "Bienvenido";
 
         Future.delayed(const Duration(seconds: 1), () {
 
@@ -39,17 +39,18 @@ class _P1State extends State<P1> {
 
       } else {
 
-        textoEstado = "Datos incorrectos";
+        textoEstado = "Ha habido un problema con el ingreso de datos";
       }
     });
   }
 
   @override
+  
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Inicio de sesión"),
+        title: const Text("Login"),
       ),
 
       body: Padding(
@@ -64,7 +65,7 @@ class _P1State extends State<P1> {
               controller: controladorUsuario,
 
               decoration: const InputDecoration(
-                labelText: "Nombre de usuario",
+                labelText: "Usuario",
                 border: OutlineInputBorder(),
               ),
             ),
@@ -76,7 +77,7 @@ class _P1State extends State<P1> {
               obscureText: true,
 
               decoration: const InputDecoration(
-                labelText: "Clave",
+                labelText: "Contraseña",
                 border: OutlineInputBorder(),
               ),
             ),
@@ -85,7 +86,7 @@ class _P1State extends State<P1> {
 
             ElevatedButton(
               onPressed: comprobarDatos,
-              child: const Text("Entrar"),
+              child: const Text("Ingrese"),
             ),
 
             const SizedBox(height: 20),
