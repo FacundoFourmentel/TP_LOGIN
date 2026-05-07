@@ -8,12 +8,12 @@ class P2 extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Segunda pantalla"),
+        title: const Text("Pantalla numero 2"),
       ),
 
       body: const Center(
         child: Text(
-          "Ingreso a la aplicación exitoso",
+          "Perfecto, bienvenido a nuestra app",
           style: TextStyle(fontSize: 24),
         ),
       ),
